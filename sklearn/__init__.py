@@ -12,6 +12,7 @@ machine-learning as a versatile tool for science and engineering.
 
 See http://scikit-learn.org for complete documentation.
 """
+import os
 import sys
 import re
 import warnings
@@ -37,7 +38,7 @@ warnings.filterwarnings('always', category=DeprecationWarning,
 # Dev branch marker is: 'X.Y.dev' or 'X.Y.devN' where N is an integer.
 # 'X.Y.dev0' is the canonical version of 'X.Y.dev'
 #
-__version__ = '0.18.dev0'
+__version__ = '0.18.dev0-%s-SNAPSHOT' % os.popen('git rev-parse HEAD').read().strip()
 
 
 try:
